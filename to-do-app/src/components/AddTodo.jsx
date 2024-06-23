@@ -1,19 +1,23 @@
 import { useState } from "react";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [dueDate, setDuedate] = useState();
+  const [todoName, setTodoName] = useState("");
+  const [dueDate, setDuedate] = useState("");
+
   const handleNameChange = (event) => {
     setTodoName(event.target.value)
   }
+
   const handleDateChange = (event) => {
     setDuedate(event.target.value);
   }
+
   const handleAddButton = () => {
     onNewItem(todoName, dueDate);
     setTodoName("");
     setDuedate("");
   }
+
   return (
     <div className="container text-center">
       <div className="row kg-row">
